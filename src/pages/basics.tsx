@@ -9,7 +9,7 @@ const Basics: NextPage = (props) => {
         <title>NFT Fractionizer Tests</title>
         <meta
           name="description"
-          content="Testing Basic Functionality"
+          content="Testing Basic Fractionizer Functionality"
         />
       </Head>
       <BasicsView />
