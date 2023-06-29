@@ -17,8 +17,8 @@ export const BasicsView: FC = ({ }) => {
         </h1>
         {/* CONTENT GOES HERE */}
         <div className="text-center">
-          <LockNFT />
           <RequestAirdrop />
+          <LockNFT />
           <PingContract />
         </div>
       </div>
