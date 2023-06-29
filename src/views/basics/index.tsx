@@ -18,8 +18,8 @@ export const BasicsView: FC = ({ }) => {
         {/* CONTENT GOES HERE */}
         <div className="text-center">
           <RequestAirdrop />
-          <LockNFT />
           <PingContract />
+          <LockNFT />
         </div>
       </div>
     </div>
