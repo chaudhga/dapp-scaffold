@@ -6,6 +6,7 @@ import idl from '../../group8.json';
 import { notify } from '../utils/notifications';
 
 function LockNFT() {
+  console.log('Inside LockNFT...')
   const defaultProgramId = 'GVyKhCt25xvgXbjGyGq8WRjPbvUD1TToyyQPpRYZp8wa';
   const defaultNetwork = 'https://api.devnet.solana.com';
   const { publicKey, signTransaction } = useWallet();
@@ -23,10 +24,13 @@ function LockNFT() {
       preflightCommitment: 'processed',
     }, {});
 
+    console.log('Connected to the network');
+
     // Load the program
     const programIdPublicKey = new PublicKey(programId);
     const program = new anchor.Program(idl, programIdPublicKey, provider);
 
+    
     // Required input accounts
     const sender = Keypair.generate();
     const senderTokenAccount = Keypair.generate();

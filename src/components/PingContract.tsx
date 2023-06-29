@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { Connection, PublicKey } from '@solana/web3.js';
 
 const PingContract: React.FC = () => {
-  const defaultProgramId = 'YourDefaultProgramIdHere';
-  const defaultNetwork = 'https://api.mainnet-beta.solana.com';
+  const defaultProgramId = 'GVyKhCt25xvgXbjGyGq8WRjPbvUD1TToyyQPpRYZp8wa';
+  const defaultNetwork = 'https://api.devnet.solana.com';
 
   const [programIdInput, setProgramIdInput] = useState<string>(defaultProgramId);
   const [networkInput, setNetworkInput] = useState<string>(defaultNetwork);
@@ -34,6 +34,7 @@ const PingContract: React.FC = () => {
         type="text"
         value={programIdInput}
         onChange={(e) => setProgramIdInput(e.target.value)}
+        style={{ color: 'black' }}
       />
       <label htmlFor="networkInput">Network:</label>
       <input
@@ -41,6 +42,7 @@ const PingContract: React.FC = () => {
         type="text"
         value={networkInput}
         onChange={(e) => setNetworkInput(e.target.value)}
+        style={{ color: 'black' }}
       />
       <button onClick={handlePing} disabled={isPinging}>
         {isPinging ? 'Pinging...' : 'Ping'}

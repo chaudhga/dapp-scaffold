@@ -4,6 +4,7 @@ import { SignMessage } from '../../components/SignMessage';
 import { SendTransaction } from '../../components/SendTransaction';
 import { SendVersionedTransaction } from '../../components/SendVersionedTransaction';
 import LockNFT from '../../components/LockNFT';
+import PingContract from '../../components/PingContract';
 
 export const BasicsView: FC = ({ }) => {
 
@@ -19,6 +20,7 @@ export const BasicsView: FC = ({ }) => {
           <SendTransaction />
           <SendVersionedTransaction />
           <LockNFT />
+          <PingContract />
         </div>
       </div>
     </div>
