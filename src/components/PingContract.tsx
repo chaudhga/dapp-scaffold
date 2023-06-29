@@ -35,7 +35,7 @@ const PingContract: React.FC = () => {
         onChange={(e) => setProgramIdInput(e.target.value)}
         style={{ color: 'black', marginRight: '8px', marginTop: '8px', marginBottom: '8px' }}
       />
-      <label htmlFor="networkInput"  style={{ marginRight: '8px', marginTop: '200px', marginBottom: '8px' }}>Network:</label>
+      <label htmlFor="networkInput"  style={{ marginRight: '8px', marginTop: '2px', marginBottom: '8px' }}>Network:</label>
       <input
         id="networkInput"
         type="text"
@@ -44,7 +44,7 @@ const PingContract: React.FC = () => {
         style={{ color: 'black', marginRight: '8px', marginTop: '8px', marginBottom: '8px' }}
       />
       <button className="group w-60 m-2 btn animate-pulse bg-gradient-to-br from-indigo-500 to-fuchsia-500 hover:from-white hover:to-purple-300 text-black"
-        onClick={handlePing} disabled={isPinging} style={{ color: 'black', marginRight: '8px', marginTop: '200px', marginBottom: '8px' }}>
+        onClick={handlePing} disabled={isPinging} style={{ color: 'black', marginRight: '8px', marginTop: '8px', marginBottom: '8px' }}>
         {isPinging ? 'Pinging...' : 'Ping'}
       </button>
       <p>{pingResult}</p>
