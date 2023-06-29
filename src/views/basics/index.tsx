@@ -5,6 +5,7 @@ import { SendTransaction } from '../../components/SendTransaction';
 import { SendVersionedTransaction } from '../../components/SendVersionedTransaction';
 import LockNFT from '../../components/LockNFT';
 import PingContract from '../../components/PingContract';
+import { RequestAirdrop } from "components/RequestAirdrop";
 
 export const BasicsView: FC = ({ }) => {
 
@@ -16,10 +17,8 @@ export const BasicsView: FC = ({ }) => {
         </h1>
         {/* CONTENT GOES HERE */}
         <div className="text-center">
-          <SignMessage />
-          <SendTransaction />
-          <SendVersionedTransaction />
           <LockNFT />
+          <RequestAirdrop />
           <PingContract />
         </div>
       </div>

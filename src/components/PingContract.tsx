@@ -27,24 +27,24 @@ const PingContract: React.FC = () => {
 
   return (
     <div>
-      <h2>Ping Solana Smart Contract</h2>
-      <label htmlFor="programIdInput">Program ID:</label>
+      <label htmlFor="programIdInput"  style={{ marginRight: '8px', marginTop: '200px', marginBottom: '8px' }}>Program ID:</label>
       <input
         id="programIdInput"
         type="text"
         value={programIdInput}
         onChange={(e) => setProgramIdInput(e.target.value)}
-        style={{ color: 'black' }}
+        style={{ color: 'black', marginRight: '8px', marginTop: '200px', marginBottom: '8px' }}
       />
-      <label htmlFor="networkInput">Network:</label>
+      <label htmlFor="networkInput"  style={{ marginRight: '8px', marginTop: '200px', marginBottom: '8px' }}>Network:</label>
       <input
         id="networkInput"
         type="text"
         value={networkInput}
         onChange={(e) => setNetworkInput(e.target.value)}
-        style={{ color: 'black' }}
+        style={{ color: 'black', marginRight: '8px', marginTop: '200px', marginBottom: '8px' }}
       />
-      <button onClick={handlePing} disabled={isPinging}>
+      <button className="group w-60 m-2 btn animate-pulse bg-gradient-to-br from-indigo-500 to-fuchsia-500 hover:from-white hover:to-purple-300 text-black"
+        onClick={handlePing} disabled={isPinging} style={{ color: 'black', marginRight: '8px', marginTop: '200px', marginBottom: '8px' }}>
         {isPinging ? 'Pinging...' : 'Ping'}
       </button>
       <p>{pingResult}</p>

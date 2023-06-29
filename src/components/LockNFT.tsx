@@ -21,8 +21,10 @@ function LockNFT() {
     // Connection to the specified network
     const connection = new Connection(network, 'confirmed');
     const provider = new anchor.AnchorProvider(connection, {
-      preflightCommitment: 'processed',
-    }, {});
+        preflightCommitment: 'processed',
+        signTransaction,
+        publicKey,
+      });
 
     console.log('Connected to the network');
 
@@ -40,7 +42,7 @@ function LockNFT() {
 
     // lockNFT function call
     try {
-      await program.rpc.lock_nft({
+      await program.rpc.lockNft({
         accounts: {
           sender: sender.publicKey,
           senderTokenAccount: senderTokenAccount.publicKey,
@@ -70,34 +72,39 @@ function LockNFT() {
   return (
     <div className="App">
       <header className="App-header">
-        <div>
-          <label htmlFor="programIdInput">Program ID:</label>
+        <div className="input-wrapper">
+          <label htmlFor="programIdInput" style={{ marginRight: '8px', marginTop: '8px', marginBottom: '8px' }}>Program ID:</label>
           <input
             id="programIdInput"
             value={programIdInput}
             onChange={(e) => setProgramIdInput(e.target.value)}
+            style={{ color: 'black' }}
           />
         </div>
-        <div>
-          <label htmlFor="networkInput">Network:</label>
+        <div className="input-wrapper">
+          <label htmlFor="networkInput" style={{ marginRight: '8px', marginTop: '8px', marginBottom: '8px' }}>Network:</label>
           <input
             id="networkInput"
             value={networkInput}
             onChange={(e) => setNetworkInput(e.target.value)}
+            style={{ color: 'black' }}
           />
         </div>
-        <div>
-          <label htmlFor="nftInput">NFT Public Key:</label>
+
+          <label htmlFor="nftInput" style={{ marginRight: '8px', marginTop: '8px', marginBottom: '8px' }}>NFT Public Key:</label>
           <input
             id="nftInput"
             value={nftInput}
             onChange={(e) => setNftInput(e.target.value)}
+            style={{ color: 'black' }}
           />
-        </div>
+
+
         <button
           className="group w-60 m-2 btn animate-pulse bg-gradient-to-br from-indigo-500 to-fuchsia-500 hover:from-white hover:to-purple-300 text-black"
           onClick={onSubmit}
           disabled={!publicKey}
+          style={{ marginRight: '8px', marginTop: '8px', marginBottom: '8px' }}
         >
           <div className="hidden group-disabled:block">Wallet not connected</div>
           <span className="block group-disabled:hidden">Lock NFT</span>
