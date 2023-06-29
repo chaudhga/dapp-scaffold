@@ -30,7 +30,7 @@ function LockNFT() {
     const programIdPublicKey = new PublicKey(programId);
     const program = new anchor.Program(idl, programIdPublicKey, provider);
 
-    
+
     // Required input accounts
     const sender = Keypair.generate();
     const senderTokenAccount = Keypair.generate();
@@ -40,7 +40,7 @@ function LockNFT() {
 
     // lockNFT function call
     try {
-      await program.rpc.lockNFT({
+      await program.rpc.lock_nft({
         accounts: {
           sender: sender.publicKey,
           senderTokenAccount: senderTokenAccount.publicKey,
